@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -24,5 +25,9 @@ public class StudentService {
 
     public List<Student> returnAllStudents(){
         return studentDao.returnAllStudents();
+    }
+
+    public Optional<Student> selectStudentById(int id) {
+        return studentDao.selectStudentById(id);
     }
 }

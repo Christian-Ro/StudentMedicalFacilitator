@@ -27,4 +27,10 @@ public class StudentController {
     public List<Student> returnAllStudents(){
         return studentService.returnAllStudents();
     }
+
+    //TODO return a 404 or something  for user not found
+    @GetMapping(path = "/{id}")
+    public Student getStudentById(@PathVariable("id") int id) {
+        return studentService.selectStudentById(id).orElse(null);
+    }
 }

@@ -1,3 +1,4 @@
+/*
 package com.studentmedicalfacilitator.Controller;
 
 import org.springframework.stereotype.Controller;
@@ -31,3 +32,4 @@ public class LoginController {
         return "Error 403";
     }
 }
+*/

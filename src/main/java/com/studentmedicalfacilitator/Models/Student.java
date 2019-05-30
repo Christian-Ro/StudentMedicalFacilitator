@@ -2,8 +2,11 @@ package com.studentmedicalfacilitator.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
+
 public class Student {
 
+    @NotBlank
     private String name;
     private int id;
 

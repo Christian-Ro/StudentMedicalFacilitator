@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+/*
+    TODO Update the business logic
+ */
 @Service
 public class StudentService {
 
@@ -29,5 +31,13 @@ public class StudentService {
 
     public Optional<Student> selectStudentById(int id) {
         return studentDao.selectStudentById(id);
+    }
+
+    public int deleteStudentById(int id) {
+        return studentDao.deleteStudentById(id);
+    }
+
+    public int updateStudentById(int id, Student updatedStudent) {
+        return studentDao.updateStudentById(id, updatedStudent);
     }
 }

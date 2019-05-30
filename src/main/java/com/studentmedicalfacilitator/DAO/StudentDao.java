@@ -20,4 +20,8 @@ public interface StudentDao {
     List<Student> returnAllStudents();
 
     Optional<Student> selectStudentById(int id);
+
+    int deleteStudentById(int id);
+
+    int updateStudentById(int id, Student student);
 }

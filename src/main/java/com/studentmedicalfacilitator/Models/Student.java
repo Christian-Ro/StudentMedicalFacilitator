@@ -14,6 +14,7 @@ public class Student {
     @Id
     private int id;
 
+    public Student(){}
     public Student(@JsonProperty("id") int id, @JsonProperty("name") String name) {
         this.name = name;
         this.id = id;

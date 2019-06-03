@@ -20,14 +20,15 @@ public class StudentMysql implements StudentDao {
     @Override
     public int insertStudent(Student student) {
         session.beginTransaction();
-        session.save(student);
+        session.save(new Student(student.getId(), student.getName()));
         session.getTransaction().commit();
         return 0;
     }
 
     @Override
     public List<Student> returnAllStudents() {
-        return null;
+
+        return session.createQuery("from Student").list();
     }
 
     @Override

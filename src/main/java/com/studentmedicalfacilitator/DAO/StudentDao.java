@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-public interface StudentDao {
+public interface StudentDao{
 
     int insertStudent(Student student);
 

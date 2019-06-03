@@ -17,7 +17,7 @@ public class StudentService {
     private final StudentDao studentDao;
 
     @Autowired
-    public StudentService(@Qualifier("fakeDao") StudentDao studentDao) {
+    public StudentService(@Qualifier("Mysql") StudentDao studentDao) {
         this.studentDao = studentDao;
     }
 

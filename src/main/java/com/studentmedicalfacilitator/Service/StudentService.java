@@ -1,6 +1,7 @@
 package com.studentmedicalfacilitator.Service;
 
 import com.studentmedicalfacilitator.DAO.StudentDao;
+import com.studentmedicalfacilitator.Exception.BusinessException;
 import com.studentmedicalfacilitator.Models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +18,7 @@ public class StudentService {
     private final StudentDao studentDao;
 
     @Autowired
-    public StudentService(@Qualifier("Mysql") StudentDao studentDao) {
+    public StudentService(@Qualifier("postgresProcess") StudentDao studentDao) {
         this.studentDao = studentDao;
     }
 

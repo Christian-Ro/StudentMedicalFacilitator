@@ -1,12 +1,14 @@
 package com.studentmedicalfacilitator.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Repository
 public class Student {
 
     @NotBlank

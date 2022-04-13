@@ -1,12 +1,10 @@
 package com.studentmedicalfacilitator.Controller;
 
-import com.studentmedicalfacilitator.Models.Student;
+import com.studentmedicalfacilitator.Entity.Student;
 import com.studentmedicalfacilitator.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RequestMapping("/student")
@@ -41,9 +39,9 @@ public class StudentController {
         studentService.deleteStudentById(id);
     }
 
-    @PutMapping(path = "{id}")
-    public void updateStudentById(@PathVariable("id") int id, @Valid @NonNull @RequestBody Student student) {
-        studentService.updateStudentById(id, student);
-
-    }
+//    @PutMapping(path = "{id}")
+//    public void updateStudentById(@PathVariable("id") int id, @Valid @NonNull @RequestBody Student student) {
+//        studentService.updateStudentById(id, student);
+//
+//    }
 }

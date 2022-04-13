@@ -1,10 +1,8 @@
 package com.studentmedicalfacilitator.Service;
 
-import com.studentmedicalfacilitator.DAO.StudentDao;
-import com.studentmedicalfacilitator.Exception.BusinessException;
-import com.studentmedicalfacilitator.Models.Student;
+import com.studentmedicalfacilitator.DAO.StudentRepository;
+import com.studentmedicalfacilitator.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,30 +13,30 @@ import java.util.Optional;
 @Service
 public class StudentService {
 
-    private final StudentDao studentDao;
+    private final StudentRepository studentRepository;
 
     @Autowired
-    public StudentService(@Qualifier("postgresProcess") StudentDao studentDao) {
-        this.studentDao = studentDao;
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
     }
 
-    public int addStudent(Student student) {
-        return studentDao.insertStudent(student);
+    public Student addStudent(Student student) {
+        return this.studentRepository.save(student);
     }
 
     public List<Student> returnAllStudents(){
-        return studentDao.returnAllStudents();
+        return (List<Student>) studentRepository.findAll();
     }
 
-    public Optional<Student> selectStudentById(int id) {
-        return studentDao.selectStudentById(id);
+    public Optional<com.studentmedicalfacilitator.Entity.Student> selectStudentById(int id) {
+        return studentRepository.findById((long) id);
     }
 
-    public int deleteStudentById(int id) {
-        return studentDao.deleteStudentById(id);
+    public void deleteStudentById(int id) {
+        studentRepository.deleteById((long) id);
     }
 
-    public int updateStudentById(int id, Student updatedStudent) {
-        return studentDao.updateStudentById(id, updatedStudent);
-    }
+//    public int updateStudentById(int id, com.studentmedicalfacilitator.Models.Student updatedStudent) {
+//        return studentRepository.updateStudentById(id, updatedStudent);
+//    }
 }

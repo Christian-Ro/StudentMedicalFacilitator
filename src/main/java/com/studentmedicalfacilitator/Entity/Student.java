@@ -1,4 +1,4 @@
-package com.studentmedicalfacilitator.Models;
+package com.studentmedicalfacilitator.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Repository;
